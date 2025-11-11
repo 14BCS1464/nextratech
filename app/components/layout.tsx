@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata = {
   title: 'Nexttratech',
-  description: 'Logic solution Private Limited',
+  description: 'Handcrafted Indian-inspired chocolates',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
