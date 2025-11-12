@@ -119,16 +119,7 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-12 text-center">
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-violet-500 to-cyan-400 text-black font-semibold px-6 py-3 rounded-md shadow-lg hover:-translate-y-1 transition-transform"
-          >
-            Talk to an expert
-            <ArrowRight className="h-4 w-4" />
-          </a>
-        </div>
+     
       </div>
     </section>
   );
