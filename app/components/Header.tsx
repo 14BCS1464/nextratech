@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const navItems = ["home", "services", "tech", "testimonials",  "contact"];
+const navItems = ["home", "services", "tech", "testimonials", "contact"];
 
 const Header: React.FC = React.memo(function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -32,41 +32,36 @@ const Header: React.FC = React.memo(function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl rom-[#0F172A] via-[#1E3A8A] to-[#3B82F6]  border-b border-slate-800/50"
-     
+
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex items-center gap-3 cursor-pointer">
-        <div className="relative inline-block">
-        <div
-                className="absolute inset-0 rounded-xl"
-                style={{
-                  background: "linear-gradient(120deg, #fff 0%, #f8fafc 100%)",
-                  opacity: 0.9,
-                  filter: "blur(10px)",
-                  zIndex: 0,
-                }}
-                aria-hidden="true"
-              />
-              <img
-                src="/images/nextratech-logo.png"
-                alt="Logo"
-                className="h-15 w-100 object-contain relative z-10"
-                style={{ background: "transparent" }}
-              />
-            </div>
-        </motion.div>
 
-        <nav className="hidden lg:flex gap-8 text-sm">
+
+        <img
+          src="/images/nextratech-logo.png"
+          alt="Logo"
+          className="h-15 w-100 object-contain relative z-10"
+          style={{ background: "transparent" }}
+        />
+
+
+
+        <nav className="hidden lg:flex gap-10 text-lg font-medium">
           {navItems.map((item) => (
             <motion.a
               key={item}
               href={`#${item}`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              className={`relative transition-colors ${activeSection === item ? "text-violet-400" : "text-slate-300 hover:text-white"}`}
+              className={`relative transition-colors text-black hover:text-violet-600`}
             >
               {item.charAt(0).toUpperCase() + item.slice(1)}
-              {activeSection === item && <motion.div layoutId="activeSection" className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-violet-500 to-cyan-500" />}
+              {activeSection === item && (
+                <motion.div
+                  layoutId="activeSection"
+                  className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full bg-gradient-to-r from-violet-500 to-cyan-500"
+                />
+              )}
             </motion.a>
           ))}
         </nav>
