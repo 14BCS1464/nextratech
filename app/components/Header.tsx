@@ -31,22 +31,17 @@ const Header: React.FC = React.memo(function Header() {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl rom-[#0F172A] via-[#1E3A8A] to-[#3B82F6]  border-b border-slate-800/50"
-
+      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl text-gray-900 shadow-2xl shadow-blue-900/50 justify-around"
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-
-
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center ">
         <img
           src="/images/nextratech-logo.png"
           alt="Logo"
-          className="h-15 w-100 object-contain relative z-10"
+          className="h-20 w-100 object-cover relative z-10"
           style={{ background: "transparent" }}
         />
 
-
-
-        <nav className="hidden lg:flex gap-10 text-lg font-medium">
+        <nav className="hidden lg:flex gap-10 text-lg font-medium ml-70">
           {navItems.map((item) => (
             <motion.a
               key={item}
@@ -59,36 +54,40 @@ const Header: React.FC = React.memo(function Header() {
               {activeSection === item && (
                 <motion.div
                   layoutId="activeSection"
-                  className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full bg-gradient-to-r from-violet-500 to-cyan-500"
+                  className="absolute -bottom-1 left-0 right-0 h-[5px] rounded-full bg-gradient-to-r from-violet-500 to-cyan-500"
                 />
               )}
             </motion.a>
           ))}
         </nav>
 
-        {/* <div className="hidden lg:flex gap-3">
-          <motion.a
-            whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(139, 92, 246, 0.4)" }}
-            whileTap={{ scale: 0.95 }}
-            href="#contact"
-            className="px-5 py-2 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-lg font-semibold text-sm shadow-lg shadow-violet-500/25 relative overflow-hidden group"
-          >
-            <span className="relative z-10">Get Started</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-violet-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </motion.a>
-        </div> */}
-
-        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-2">
+        <motion.button 
+          whileHover={{ scale: 1.1 }} 
+          whileTap={{ scale: 0.9 }} 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+          className="lg:hidden p-2"
+        >
           {mobileMenuOpen ? <X /> : <Menu />}
         </motion.button>
       </div>
 
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="lg:hidden absolute top-full left-0 right-0 bg-slate-900/95 backdrop-blur-xl border-b border-slate-800 overflow-hidden">
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }} 
+            animate={{ opacity: 1, height: "auto" }} 
+            exit={{ opacity: 0, height: 0 }} 
+            className="lg:hidden absolute top-full left-0 right-0 bg-slate-900/95 backdrop-blur-xl shadow-2xl shadow-blue-900/50 overflow-hidden"
+          >
             <div className="flex flex-col p-6 gap-4">
               {navItems.map((item) => (
-                <motion.a key={item} href={`#${item}`} onClick={() => setMobileMenuOpen(false)} whileHover={{ x: 10 }} className="text-slate-300 hover:text-white transition-colors py-2 border-l-2 border-transparent hover:border-violet-500 pl-4">
+                <motion.a 
+                  key={item} 
+                  href={`#${item}`} 
+                  onClick={() => setMobileMenuOpen(false)} 
+                  whileHover={{ x: 10 }} 
+                  className="text-slate-300 hover:text-white transition-colors py-2 border-l-2 border-transparent hover:border-violet-500 pl-4"
+                >
                   {item.charAt(0).toUpperCase() + item.slice(1)}
                 </motion.a>
               ))}
