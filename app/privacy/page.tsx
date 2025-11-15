@@ -3,7 +3,7 @@ import PrivacyComponent from "../feature/privacy/ui";
 
 const PrivacyPage: React.FC = () => {
   return (
-<PrivacyComponent/>
+    <PrivacyComponent />
   );
 };
 
