@@ -37,7 +37,7 @@ const Header: React.FC = React.memo(function Header() {
         <img
           src="/images/nextratech-logo.png"
           alt="Logo"
-          className="h-20 w-100 object-cover relative z-10"
+          className="h-20 w-70 object-cover relative z-10"
           style={{ background: "transparent" }}
         />
 

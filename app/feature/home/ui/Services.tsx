@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { ArrowRight, Check, ExternalLink, FileText } from "lucide-react";
-import { services } from "../data/services";
+import { services } from "../../../data/services";
 
 export default function Services() {
   return (

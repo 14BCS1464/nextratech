@@ -131,9 +131,7 @@ export default function Footer() {
                 <li>
                   <a href="/careers" className="hover:text-violet-600 transition">Careers</a>
                 </li>
-                <li>
-                  <a href="/blog" className="hover:text-violet-600 transition">Blog</a>
-                </li>
+               
                 <li>
                   <a href="/privacy" className="hover:text-violet-600 transition">Privacy</a>
                 </li>

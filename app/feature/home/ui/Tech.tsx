@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { techLogos } from "../data/services";
+import { techLogos } from "../../../data/services";
 
 export default function Tech() {
   return (

@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, Pause, ChevronLeft, ChevronRight, Star } from "lucide-react";
-import { testimonials as sampleTestimonials } from "../data/services";
+import { testimonials as sampleTestimonials } from "../../../data/services";
 
 export default function Testimonials() {
   const testimonials =
